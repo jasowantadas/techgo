@@ -4,7 +4,7 @@ import { products } from "../products";
 function ProductsScreens() {
   return (
     <>
-      <Wrap pt={10} spacing="30px" justify="center" minHeight="100vh">
+      <Wrap pt={10} spacing="45px" justify="center" minHeight="100vh">
         {products.map((i) => (
           <WrapItem key={i._id}>
             <Center w="250px" h="320px">

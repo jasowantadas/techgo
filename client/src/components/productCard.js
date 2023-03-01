@@ -29,7 +29,7 @@ const Review = ({ rating, numReviews }) => {
       </HStack>
       <Text fontWeight="bold" alignItems="center">
         {numReviews < 1
-          ? `No Reviews`
+          ? `No Review`
           : numReviews > 1
           ? `${numReviews} Reviews`
           : `${numReviews} Review`}
