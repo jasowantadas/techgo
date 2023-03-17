@@ -7,7 +7,6 @@ import {
   useColorModeValue,
   Icon,
   Button,
-  Tooltip,
   Stack,
   Link,
   HStack,
@@ -17,10 +16,10 @@ import { FiShoppingCart } from "react-icons/fi";
 import { StarIcon } from "@chakra-ui/icons";
 import { Link as ReactLink } from "react-router-dom";
 
-const Review = ({ rating, numReviews }) => {
+const Review = ({ rating, numberOfReviews }) => {
   return (
     <Flex>
-      <HStack display={numReviews < 1 ? "none" : true} pr={2}>
+      <HStack display={numberOfReviews < 1 ? "none" : true} pr={2}>
         <StarIcon color={rating >= 1 ? "orange" : "gray.400"} />
         <StarIcon color={rating >= 2 ? "orange" : "gray.400"} />
         <StarIcon color={rating >= 3 ? "orange" : "gray.400"} />
@@ -28,11 +27,11 @@ const Review = ({ rating, numReviews }) => {
         <StarIcon color={rating >= 5 ? "orange" : "gray.400"} />
       </HStack>
       <Text fontWeight="bold" alignItems="center">
-        {numReviews < 1
+        {numberOfReviews < 1
           ? `No Review`
-          : numReviews > 1
-          ? `${numReviews} Reviews`
-          : `${numReviews} Review`}
+          : numberOfReviews > 1
+          ? `${numberOfReviews} Reviews`
+          : `${numberOfReviews} Review`}
       </Text>
     </Flex>
   );
@@ -51,7 +50,7 @@ function ProductCard({ product }) {
         shadow="lg"
         position="relative"
       >
-        {product.isNew && (
+        {product.ProductisNew && (
           <Circle
             size="10px"
             top={2}
@@ -71,7 +70,7 @@ function ProductCard({ product }) {
         )}
         <Image src={product.image} roundedTop="lg" />
         <Box>
-          {product.isNew && (
+          {product.ProductisNew && (
             <Badge rounded="full" fontSize="0.8em" colorScheme="green">
               New
             </Badge>
@@ -87,9 +86,9 @@ function ProductCard({ product }) {
             <Box flex={1} fontSize="2xl" fontWeight="semibold">
               {product.name}
             </Box>
-          </Link>
+          </Link> 
         </Flex>
-        <Review rating={product.rating} numReviews={product.numReviews} />
+        <Review rating={product.rating} numberOfReviews={product.numberOfReviews} />
         <Flex
           pt={2}
           position="absolute"
